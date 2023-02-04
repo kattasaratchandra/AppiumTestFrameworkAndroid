@@ -10,6 +10,7 @@
  */
 package com.qa;
 
+import com.qa.utils.TestUtils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -32,8 +33,8 @@ import java.util.Properties;
 
 public class BaseTest {
 
-    protected AppiumDriver driver;
-    protected Properties props;
+    protected static AppiumDriver driver;
+    protected static Properties props;
     InputStream inputStream;
     WebDriverWait wait;
 
@@ -70,7 +71,7 @@ public class BaseTest {
     }
 
     public void waitForVisibility(WebElement element) {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtils.WAIT));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -81,12 +82,18 @@ public class BaseTest {
 
     public void sendKeys(WebElement element, String text){
         waitForVisibility(element);
+        element.clear();
         element.sendKeys(text);
     }
 
-    public void getAttribute(WebElement element, String Attribute){
+    public String getAttribute(WebElement element, String Attribute){
         waitForVisibility(element);
-        element.getAttribute(Attribute);
+        return element.getAttribute(Attribute);
+    }
+
+    public Boolean isElementPresent(WebElement element){
+        waitForVisibility(element);
+        return element.isDisplayed();
     }
 
     @AfterTest

@@ -26,4 +26,7 @@ methods.
 parameterization.
     3. initialised properties file.
     4. used try catch block to get the exception immediate
-    5. created explicit wait. using it created common methods for click, sendkeys and get attribute 
+    5. created explicit wait. using it created common methods for click, sendkeys and get attribute.
+12. created test utils for constants, created packages for tests and pages.
+13. In page's I defined the webElement and created methods for actions using common methods in base test
+14. In Tests used before method for creating home page object.
