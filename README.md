@@ -11,16 +11,15 @@ Xcuittest.
 4. if the element has accessibility id and id are different methods use accordingly
 5. we usually use click gesture when click and tap methods wont work
 6. As of now the latest testng only works on version java 11 or above it wont work on 8, 9,10
-
-TDD Framework:
-7. created baseTest class in com.qa package with @before and @After Tests such that we initialize driver. here 
+7. TDD FRAMEWORK:
+8. created baseTest class in com.qa package with @before and @After Tests such that we initialize driver. here 
 the intention is to initialize driver only once and use it across all the test classes and quit after it with 
 the help of before and after tests
-8. created config.properties file for global variables. so that we dont hard code the values of desired 
+9. created config.properties file for global variables. so that we dont hard code the values of desired 
 capabilities and in resources created app folder for the android apk's and ios ipa builds we take app from there
-9. if we have properties file in resource folder then the entire path is not required to give. and we use input
+10. if we have properties file in resource folder then the entire path is not required to give. and we use input
 stream instead fileinputstream
-10. Base Tests:
+11. Base Tests:
     1. initialize the appium driver in before tests with desired capabilities. quit the driver using after test
 methods.
     2. for desired capabilities used properties file for some values and device specific values used testng 
