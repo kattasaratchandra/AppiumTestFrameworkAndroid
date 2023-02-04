@@ -3,7 +3,6 @@
  */
 
 
-
 package com.mobile;
 
 import com.beust.ah.A;
@@ -27,17 +26,17 @@ import java.time.Duration;
 
 public class Tests {
 
-     AppiumDriver driver;
-     WebDriverWait wait;
+    AppiumDriver driver;
+    WebDriverWait wait;
 
-    public  WebElement wait(WebElement element){
+    public WebElement wait(WebElement element) {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        return  wait.until(ExpectedConditions.visibilityOf(element));
+        return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public  WebElement waitClickable(WebElement element){
+    public WebElement waitClickable(WebElement element) {
         wait = new WebDriverWait(driver, Duration.ofSeconds(50));
-        return  wait.until(ExpectedConditions.elementToBeClickable(element));
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     @BeforeClass
@@ -46,9 +45,8 @@ public class Tests {
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "pixel");
-        desiredCapabilities.setCapability("appium:appPackage","com.saucelabs.mydemoapp.rn");
-        desiredCapabilities.setCapability("appium:appActivity",".MainActivity");
-
+        desiredCapabilities.setCapability("appium:appPackage", "com.saucelabs.mydemoapp.rn");
+        desiredCapabilities.setCapability("appium:appActivity", ".MainActivity");
         // creating url object with the url of appium server which is started manually using appium cli
         URL url = new URL("http://0.0.0.0:4723");
         // creating driver session using url and desired capabilities
@@ -74,20 +72,11 @@ public class Tests {
         String expectedText = errorText.getAttribute("text");
         String actualText = "Provided credentials do not match any user in this service.";
         Assert.assertEquals(actualText, expectedText);
-        /***
-         * bob@example.com
-         * 10203040
-         * //android.view.ViewGroup[@content-desc="generic-error-message"]/android.widget.TextView
-         * menu item log out
-         * android:id/button1
-         * android:id/alertTitle
-         * You are successfully logged out.
-         *
-         */
+
     }
 
     @Test(priority = 2)
-    public void invalidPassword(){
+    public void invalidPassword() {
         WebElement usernameField = driver.findElement(AppiumBy.accessibilityId("Username input field"));
         usernameField.clear();
         usernameField.sendKeys("bob@example.com");
@@ -105,7 +94,7 @@ public class Tests {
     }
 
     @Test(priority = 3)
-    public void validUsernameAndPassword(){
+    public void validUsernameAndPassword() {
 
         WebElement usernameField = wait(driver.findElement(AppiumBy.accessibilityId("Username input field")));
         usernameField.clear();
@@ -126,14 +115,14 @@ public class Tests {
     }
 
     @AfterClass
-    public void afterClass(){
+    public void afterClass() {
         System.out.println("logging out");
         logOut();
         System.out.println("quitting the driver");
         driver.quit();
     }
 
-    public void logOut(){
+    public void logOut() {
         wait(driver.findElement(AppiumBy.accessibilityId("open menu"))).click();
         wait(driver.findElement(AppiumBy.accessibilityId("menu item log out"))).click();
         wait(driver.findElement(AppiumBy.id("android:id/button1"))).click();

@@ -2,6 +2,8 @@
 
 <suite name="Suite1" verbose="1" >
     <test name="Regression1"   >
+        <parameter name="PLATFORM_NAME" value="Android"/>
+        <parameter name="DEVICE_NAME" value="pixel"/>
         <classes>
             <class name="com.mobile.Tests"/>
         </classes>
