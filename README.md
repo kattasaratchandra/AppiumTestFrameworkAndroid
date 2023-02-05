@@ -32,4 +32,12 @@ parameterization.
 14. In Tests used before method for creating home page object.
 15. created testng listeners to handle exceptions. we call listeners two ways through test class and testng.xml.
 it's better to call from xml so that no need to call from each test class every time we create
-16. we use stringWriter, printWriter to log exceptions in testng and console.
+16. Have used stringWriter, printWriter to log exceptions in testng and console.
+17. Have used json file as test data and org.json library to create json object and get data. 
+18. It's recommended/good practice to use udid capability rather platform version as appium may confuse while we using 
+multiple devices.
+19. As we maintain same framework for both ios and android we use switch statement based on platform value we run
+the code.
+20. we create common pages fragments for other pages and extend them for all the common pages. this way we can
+avoid creating elements again(code duplication)
+21. 
