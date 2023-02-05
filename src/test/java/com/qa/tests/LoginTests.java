@@ -15,16 +15,6 @@ public class LoginTests extends BaseTest {
     LoginPage loginPage;
     ProductsPage productsPage;
 
-    @BeforeClass
-    public void beforeClass(){
-
-    }
-
-    @AfterClass
-    public void afterClass(){
-        productsPage.logOut();
-    }
-
     @BeforeMethod
     public void beforeMethod(Method m){
 
@@ -32,10 +22,6 @@ public class LoginTests extends BaseTest {
         System.out.println("\n" + "***********" + " starting test: " + m.getName());
     }
 
-    @AfterMethod
-    public void afterMethod(){
-
-    }
 
     @Test(priority = 1)
     public void invalidUsername() throws InterruptedException {
@@ -74,7 +60,7 @@ public class LoginTests extends BaseTest {
         productsPage.clickOpenMenu();
         loginPage = productsPage.clickLogin();
         Assert.assertTrue(loginPage.isShoppingButtonPresent());
-
+        productsPage.logOut();
     }
 
 

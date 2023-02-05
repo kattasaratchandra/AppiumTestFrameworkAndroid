@@ -56,10 +56,10 @@ public class BaseTest {
             desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, props.getProperty("androidAutomationName"));
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-            String urlPath = System.getProperty("user.dir") + File.separator + "src" + File.separator +
-                    "test" + File.separator + "resources" + File.separator + "app" + File.separator
-                    + "Android-MyDemoAppRN.1.3.0.build-244.apk";
-            desiredCapabilities.setCapability(MobileCapabilityType.APP, urlPath);
+//            String urlPath = System.getProperty("user.dir") + File.separator + "src" + File.separator +
+//                    "test" + File.separator + "resources" + File.separator + "app" + File.separator
+//                    + "Android-MyDemoAppRN.1.3.0.build-244.apk";
+//            desiredCapabilities.setCapability(MobileCapabilityType.APP, urlPath);
             desiredCapabilities.setCapability("appium:appPackage", props.getProperty("androidAppPackage"));
             desiredCapabilities.setCapability("appium:appActivity", props.getProperty("androidActivity"));
             URL url = new URL(props.getProperty("androidUrl"));

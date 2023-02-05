@@ -30,3 +30,6 @@ parameterization.
 12. created test utils for constants, created packages for tests and pages.
 13. In page's I defined the webElement and created methods for actions using common methods in base test
 14. In Tests used before method for creating home page object.
+15. created testng listeners to handle exceptions. we call listeners two ways through test class and testng.xml.
+it's better to call from xml so that no need to call from each test class every time we create
+16. we use stringWriter, printWriter to log exceptions in testng and console.
