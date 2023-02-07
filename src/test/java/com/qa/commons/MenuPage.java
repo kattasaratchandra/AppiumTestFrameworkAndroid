@@ -1,8 +1,7 @@
 package com.qa.commons;
 
-import com.qa.BaseTest;
+import com.qa.base.BaseTest;
 import com.qa.pages.LoginPage;
-import com.qa.pages.ProductsPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 

@@ -40,4 +40,22 @@ multiple devices.
 the code.
 20. we create common pages fragments for other pages and extend them for all the common pages. this way we can
 avoid creating elements again(code duplication)
-21. 
+21. When we extend the commons with other pages we can use other pages instances And call commons as 
+well in that way its more readability and that’s the best of using inheritance.
+22. Interacts with app close app and activate app depreciated instead we use terminate app and activate app using
+interactWithApps. created methods for the same in base test. This way we make test classes independent of each 
+other.
+23. To make tests independent.In before or after method usually we use close and active app methods or do login/
+logout
+24. ui scrollable no need of casting we can use directly. one disadvantage is we can't use xpath as locator. we
+use content description/accessibility id. and also we won't get compilation error. it returns web element
+25. if there is only one scrollable element then instead parent locator we can simplye give .scrollable(true)
+26. we can get global parameters from testng.xml using ITestResult in ItestListeners. returns the values in form
+of key-pair hashmap.
+27. we cast driver to canRecordeScreen and use method startRecordingScreen to record videos. usually we keep in
+before and after methods
+28. parallel execution can be achieved in mobile automation by running tests parallel on different devices.
+29. In web we usually run tests parallel at methods level. In mobile its preferred to run tests parallel in
+tests level.
+30. we use adb devices for android and ios-deploy -c to get udid's of devices
+

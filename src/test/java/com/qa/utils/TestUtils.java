@@ -6,4 +6,6 @@ public class TestUtils {
 
     //expected static text
     public static final String ERROR_TEXT = "Provided credentials do not match any user in this service.";
+    public static final String SLBTitle = "Sauce Labs Backpack";
+    public static final String SLBPrice = "$29.99";
 }

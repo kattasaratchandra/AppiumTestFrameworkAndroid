@@ -1,6 +1,6 @@
 package com.qa.tests;
 
-import com.qa.BaseTest;
+import com.qa.base.BaseTest;
 import com.qa.commons.HeaderPage;
 import com.qa.commons.MenuPage;
 import com.qa.pages.LoginPage;

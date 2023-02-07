@@ -1,12 +1,11 @@
 package com.qa.pages;
 
-import com.qa.BaseTest;
+import com.qa.base.BaseTest;
 import com.qa.commons.HeaderPage;
 import com.qa.commons.MenuPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.openqa.selenium.WebElement;
 
-import java.util.Base64;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BaseTest {
 
@@ -60,6 +59,14 @@ public class LoginPage extends BaseTest {
         clickOk();
         isElementPresent(logoutTitle);
         clickOk();
+    }
+
+    public ProductsPage login(String username, String password){
+        MenuPage menuPage = new HeaderPage().clickOpenMenu();
+        LoginPage loginPage = menuPage.clickLogin();
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        return loginPage.clickSubmit();
     }
 
 

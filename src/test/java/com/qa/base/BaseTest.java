@@ -8,7 +8,7 @@
  * 5. In constructor we intialise the page factory using appium page decorator so that no need to initialise every
  * page as this will be super class for all the page objects
  */
-package com.qa;
+package com.qa.base;
 
 import com.qa.utils.TestUtils;
 import io.appium.java_client.AppiumDriver;

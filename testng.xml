@@ -8,10 +8,15 @@
         <parameter name="PLATFORM_NAME" value="Android"/>
         <parameter name="DEVICE_NAME" value="pixel"/>
         <classes>
-            <class name="com.qa.tests.LoginTests">
+            <class name="com.qa.tests.ProductsTests">
 <!--            <methods>-->
 <!--                <include name="invalidUsername"/>-->
 <!--            </methods>-->
+            </class>
+            <class name="com.qa.tests.LoginTests">
+                <!--            <methods>-->
+                <!--                <include name="invalidUsername"/>-->
+                <!--            </methods>-->
             </class>
         </classes>
     </test>
